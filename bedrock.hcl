@@ -52,6 +52,6 @@ train {
         N_ESTIMATORS = "400"
         MAX_FEATURES = "sqrt"
         BOOTSTRAP = "FALSE"
-        RANDOM_STATE = "42
+        RANDOM_STATE = "42"
     }
 }
