@@ -1,1 +1,1 @@
-# Sparkify Churn Predictions
+# Sparkify Churn Prediction
