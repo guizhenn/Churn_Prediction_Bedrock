@@ -72,13 +72,13 @@ def main():
     print("Data shape:", df.shape)
 
     X = df[FEATURES]
-    Y = df[TARGET]
+    Y = df[TARGET].values
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.25, random_state=42, stratify = Y)
     
     print("\nTrain model")
     start = time.time()
     clf = RandomForestClassifier(n_estimators = int(N_ESTIMATORS), max_features = MAX_FEATURES, bootstrap = (BOOTSTRAP=='True'), random_state = int(RANDOM_STATE))
-    clf.fit(X_train, Y_train.values.ravel())
+    clf.fit(X_train, Y_train)
     print(f"  Time taken = {time.time() - start:.0f} s")
     
     print("\nEvaluate")
