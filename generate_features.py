@@ -23,10 +23,7 @@ AGG_PRIMITIVES = ["count", "num_unique", "mode", "mean", "sum", "max", "min"]
 
 def preprocess():
     # import data
-    df = pd.DataFrame()
-    with open(f"s3a://{RAW_BUCKET}/tiny_sparkify_event_data.json") as f:
-        transaction = [json.loads(line) for line in f]
-        df = df.append(transaction, ignore_index = True)
+    df = pd.read_json(f"s3://{RAW_BUCKET}/tiny_sparkify_event_data.json", lines=True)
 
     # remove rows with empty userid
     df = df.drop(df[df['userId']==''].index)
