@@ -77,7 +77,7 @@ def main():
     
     print("\nTrain model")
     start = time.time()
-    clf = RandomForestClassifier(n_estimators = N_ESTIMATORS, max_features = MAX_FEATURES, bootstrap = BOOTSTRAP, random_state = RANDOM_STATE)
+    clf = RandomForestClassifier(n_estimators = int(N_ESTIMATORS), max_features = MAX_FEATURES, bootstrap = (BOOTSTRAP=='True'), random_state = int(RANDOM_STATE))
     clf.fit(X_train, Y_train.values.ravel())
     print(f"  Time taken = {time.time() - start:.0f} s")
     

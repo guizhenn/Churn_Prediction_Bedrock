@@ -30,9 +30,9 @@ train {
 
     parameters {
         FEATURES_FILE = "FEATURES_FILE_GZ"  // in this example, ensure a unique name to avoid name clashes with other users
-        N_ESTIMATORS = 400
+        N_ESTIMATORS = "400"
         MAX_FEATURES = "sqrt"
-        BOOTSTRAP = False
-        RANDOM_STATE = 42
+        BOOTSTRAP = "False"
+        RANDOM_STATE = "42"
     }
 }
